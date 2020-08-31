@@ -5,6 +5,9 @@
         <title>List</title>
     </head>
     <body>
+
+
+
         {% for restaurant in restaurants %}
             <a href="{% url 'restaurant-detail' restaurant.id %}">
                 <ul>
@@ -13,7 +16,9 @@
                     <li>{{restaurant.opening_time}}</li>
                     <li>{{restaurant.closing_time}}</li>
                 </ul>
+                <a href="{% url 'restaurant-delete' restaurant_id=restaurant.id %}"><input type="submit" value="Delete"></a>
             </a>
         {% endfor %}
     </body>
+  
 </html>
